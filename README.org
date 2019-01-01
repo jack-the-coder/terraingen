@@ -1,5 +1,5 @@
 * terraingen
-This repository is an experiment in building realistic and unrealistic terrain images in a variety of styles, similar to the images you might see on [[https://www.reddit.com/r/proceduralgeneration]r/proceduralgeneration]. 
+This repository is an experiment in building realistic and unrealistic terrain images in a variety of styles, similar to the images you might see on [[https://www.reddit.com/r/proceduralgeneration] r/proceduralgeneration]. 
 
 This README file is a living document that illustrates my progress on generating a variety of styles of terrain. Each section might not be complete while others are being worked on. 
 
@@ -28,7 +28,7 @@ Here are the requirements for the final result:
 - Foliage. 
 - Different "biomes" (hard without elevation, might need elevation to get mountain regions). 
 - Different kinds of foliage, building, and other item textures in each biome. 
-- Output as a bitmap image, able to be viewed in any (normal-ish) web browser
+- Output as a bitmap image, able to be viewed in any (normal-ish) web browser.
 
 *** Software
 As with the first side-scroll attempt, I'll use Python to generate my images. However, instead of ANSI escape sequences and related atrocities, Pillow will save the day as a way to actually output an image. 
@@ -43,3 +43,5 @@ im = Image.new('RGB', (width, height))
 #+END_SRC
 
 We can then use ~im.putpixel((x,y), (r, g, b))~ to put a specific color at a specific location at the image. Saving it with ~im.save('filename.png')~ and then running ~im.show()~ allows us to see whatever we've created. 
+
+*** The algorithm
