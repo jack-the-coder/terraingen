@@ -1,0 +1,45 @@
+* terraingen
+This repository is an experiment in building realistic and unrealistic terrain images in a variety of styles, similar to the images you might see on [[https://www.reddit.com/r/proceduralgeneration]r/proceduralgeneration]. 
+
+This README file is a living document that illustrates my progress on generating a variety of styles of terrain. Each section might not be complete while others are being worked on. 
+
+** Generating Terraria-style side-scroll 2D terrain maps
+
+[[https://raw.githubusercontent.com/jack-the-coder/terraingen/master/terraingen.png]]
+
+...except, of course, it doesn't work!
+
+Attempting to shoehorn ANSI terminal escape codes onto the visual generator for the first Python version doesn't work too well. I guess maybe I'll need to make a real image with textures instead, which will require a library and possibly quite a bit more work.
+
+As you can see, even just using a different terminal emulator results in different colors (=gnome-terminal= vs the =elpy= Python REPL in Emacs). I can change the color for the whole image, but changing the color for individual lines or especially for individual blocks doesn't work so well.
+
+Got an idea to fix this? Please open an issue!
+
+*** Next attempts
+This first attempt at side-scroll 2D didn't go so well. There will be a next time, but for now I'll work on top-down instead, as it is simpler and the result should be better with less work. 
+
+** Generating top-down 2D maps 
+Procedural top-down 2D can either look like Zelda maps or like satellite imagery. Satellite-quality images from a procedural generation script would be very challenging and probably require 3D rendering. This is not what we're looking for! However, the goal is not to get video game maps that are actually playable. It's much more important for the result to look good than for it to be realistic or have entrance/exit points that you might see in a game map.
+
+Here are the requirements for the final result: 
+
+- Large world. Can be zoomed into to get more detail. 
+- Buildings that clump together. 
+- Foliage. 
+- Different "biomes" (hard without elevation, might need elevation to get mountain regions). 
+- Different kinds of foliage, building, and other item textures in each biome. 
+- Output as a bitmap image, able to be viewed in any (normal-ish) web browser
+
+*** Software
+As with the first side-scroll attempt, I'll use Python to generate my images. However, instead of ANSI escape sequences and related atrocities, Pillow will save the day as a way to actually output an image. 
+
+#+BEGIN_SRC python
+from PIL import Image
+height = 512 # this is not important
+width = 512 
+
+im = Image.new('RGB', (width, height))
+
+#+END_SRC
+
+We can then use ~im.putpixel((x,y), (r, g, b))~ to put a specific color at a specific location at the image. Saving it with ~im.save('filename.png')~ and then running ~im.show()~ allows us to see whatever we've created. 
