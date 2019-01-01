@@ -1,5 +1,5 @@
 * terraingen
-This repository is an experiment in building realistic and unrealistic terrain images in a variety of styles, similar to the images you might see on [[https://www.reddit.com/r/proceduralgeneration] r/proceduralgeneration]. 
+This repository is an experiment in building realistic and unrealistic terrain images in a variety of styles, similar to the images you might see on [[https://www.reddit.com/r/proceduralgeneration][r/proceduralgeneration]]. 
 
 This README file is a living document that illustrates my progress on generating a variety of styles of terrain. Each section might not be complete while others are being worked on. 
 
