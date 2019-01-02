@@ -50,3 +50,7 @@ By far the coolest "prior art" in this genre is WorldEngine. In particular, I en
 However, I want to create my own procedural terrain, not use WorldEngine. There's a wealth of information available from the source code of that project, though, which might help me take into account the components of the algorithm that I intend to copy. 
 
 Since the plan is to be zoomed out enough that individual buildings cannot be spotted, we can start with a simple algorithm that randomly places a dot of each biome somewhere on the map and then uses a probability function to select a place for the next dot, preferably close to the existing dot. This way, biomes gradually grow outwards from their initial starting point until every pixel in the image is filled. 
+
+*** Current result: 
+
+[[https://raw.githubusercontent.com/jack-the-coder/terraingen/master/fun%20randomness%20error.png]]

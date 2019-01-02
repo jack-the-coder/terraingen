@@ -44,7 +44,7 @@ def distance_to_point(coord1, coord2):
     return sqrt((x1-x)**2+(y1-y)**2)
 
 def get_new_x(x, x_offset):
-    if (x + x_offset) < 498 and (x + x_offset) > 2:
+    if (x + x_offset) < height_width-2 and (x + x_offset) > 2:
         new_x = x + x_offset
         return new_x
     else:
@@ -52,7 +52,7 @@ def get_new_x(x, x_offset):
         return new_x
 
 def get_new_y(y, y_offset):
-    if (y + y_offset) < 498 and (y + y_offset) > 2:
+    if (y + y_offset) < height_width-2 and (y + y_offset) > 2:
         new_y = y + y_offset
         return new_y
     else:
