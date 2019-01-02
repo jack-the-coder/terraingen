@@ -45,3 +45,8 @@ im = Image.new('RGB', (width, height))
 We can then use ~im.putpixel((x,y), (r, g, b))~ to put a specific color at a specific location at the image. Saving it with ~im.save('filename.png')~ and then running ~im.show()~ allows us to see whatever we've created. 
 
 *** The algorithm
+By far the coolest "prior art" in this genre is WorldEngine. In particular, I envy the art style shown in the [[https://github.com/Mindwerks/worldengine#biome-map][biome map]] on the WorldEngine project's [[https://github.com/Mindwerks/worldengine][GitHub repo]]. 
+
+However, I want to create my own procedural terrain, not use WorldEngine. There's a wealth of information available from the source code of that project, though, which might help me take into account the components of the algorithm that I intend to copy. 
+
+Since the plan is to be zoomed out enough that individual buildings cannot be spotted, we can start with a simple algorithm that randomly places a dot of each biome somewhere on the map and then uses a probability function to select a place for the next dot, preferably close to the existing dot. This way, biomes gradually grow outwards from their initial starting point until every pixel in the image is filled. 
