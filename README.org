@@ -54,3 +54,5 @@ Since the plan is to be zoomed out enough that individual buildings cannot be sp
 *** Current result: 
 
 [[https://raw.githubusercontent.com/jack-the-coder/terraingen/master/fun%20randomness%20error.png]]
+
+That sure didn't work! Two problems showed up when this was made: the program is slow to an extreme. An image like that should not take fifteen or more minutes to produce on recent x86 hardware. Additionally, the function that placed adjacent pixels only does left/right/up/down, so we got plaid instead of biomes. 
